@@ -129,3 +129,30 @@ $(document).ready(function(){
         }
     });
 });
+
+/* ----------------------------------------
+   WhatsApp Form Redirect
+---------------------------------------- */
+const contactForm = document.querySelector(".contact-form form");
+
+contactForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.querySelector('input[placeholder="Your Name"]').value;
+    const email = document.querySelector('input[placeholder="Your Email"]').value;
+    const phone = document.querySelector('input[placeholder="Phone Number"]').value;
+    const message = document.querySelector('textarea').value;
+
+    const whatsappNumber = "919310487906"; // add your number without + and spaces
+
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=
+        *New Contact Message From Portfolio*%0A
+        *Name:* ${name}%0A
+        *Email:* ${email}%0A
+        *Phone:* ${phone}%0A
+        *Message:* ${message}
+    `.replace(/ /g, "%20");
+
+    window.open(whatsappURL, "_blank");
+});
+
