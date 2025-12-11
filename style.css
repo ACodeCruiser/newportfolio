@@ -1,0 +1,244 @@
+/* ----------------------------------
+   GLOBAL THEME — DARK + NEON
+---------------------------------- */
+
+body {
+    background: #0d0d0d;
+    color: #ddd;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #fff;
+    font-weight: 600;
+}
+
+p {
+    color: #bfbfbf;
+}
+
+/* Neon Color Palette */
+:root {
+    --neon-primary: #00eaff;
+    --neon-secondary: #ff00c8;
+    --bg-dark: #0d0d0d;
+    --card-dark: rgba(255,255,255,0.05);
+    --glass: rgba(255,255,255,0.08);
+    --border-glow: rgba(0,234,255,0.5);
+}
+
+/* Smooth Animations */
+* {
+    transition: 0.3s ease;
+}
+
+/* ----------------------------------
+   NAVBAR
+---------------------------------- */
+.navbar {
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.navbar-brand {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--neon-primary) !important;
+    text-transform: uppercase;
+}
+
+.nav-link {
+    font-size: 15px;
+    color: #ddd !important;
+    margin-left: 18px;
+    text-transform: capitalize;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--neon-primary) !important;
+    text-shadow: 0 0 5px var(--neon-primary);
+}
+
+/* ----------------------------------
+   HERO SECTION
+---------------------------------- */
+.home {
+    padding: 120px 0;
+    background: radial-gradient(circle at top, #111 0%, #000 100%);
+}
+
+.home-text h1 {
+    font-size: 60px;
+    color: var(--neon-primary);
+    text-shadow: 0 0 12px var(--neon-primary);
+}
+
+.home-text h4 {
+    color: #bbb;
+}
+
+.home-text p {
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* Neon Button */
+.btn-1, .btn-2 {
+    padding: 12px 28px;
+    border-radius: 40px;
+    color: #fff;
+    font-weight: 600;
+    border: 2px solid var(--neon-primary);
+    background: transparent;
+    box-shadow: 0 0 10px var(--neon-primary);
+}
+
+.btn-1:hover, .btn-2:hover {
+    background: var(--neon-primary);
+    color: #000;
+    transform: translateY(-3px);
+}
+
+/* ----------------------------------
+   ABOUT SECTION
+---------------------------------- */
+.section-title h2 span {
+    color: var(--neon-primary);
+    text-shadow: 0 0 8px var(--neon-primary);
+}
+
+.about-content {
+    background: var(--glass);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.single-info {
+    background: var(--card-dark);
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.info-icon i {
+    font-size: 20px;
+    color: var(--neon-primary);
+    text-shadow: 0 0 8px var(--neon-primary);
+    width: 40px;
+}
+
+/* ----------------------------------
+   SKILL BARS
+---------------------------------- */
+.skillbar-container {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    height: 8px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.skillbar-container .skills {
+    height: 100%;
+    background: var(--neon-primary);
+    box-shadow: 0 0 10px var(--neon-primary);
+    width: 0;
+    animation: fillbar 2s ease forwards;
+}
+
+@keyframes fillbar {
+    to { width: attr(data-percent); }
+}
+
+/* ----------------------------------
+   SERVICES — Glass Cards
+---------------------------------- */
+.service-item {
+    background: var(--glass);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    text-align: center;
+    box-shadow: 0 0 12px rgba(0,234,255,0.06);
+}
+
+.service-item:hover {
+    transform: translateY(-8px);
+    border-color: var(--border-glow);
+    box-shadow: 0 0 20px var(--neon-primary);
+}
+
+.service-item .icon i {
+    font-size: 40px;
+    color: var(--neon-primary);
+    margin-bottom: 15px;
+}
+
+/* ----------------------------------
+   PROJECT CARDS
+---------------------------------- */
+#portfolio .service-item {
+    border-left: 3px solid var(--neon-primary);
+    text-align: left;
+}
+
+#portfolio .service-item:hover {
+    background: rgba(0,234,255,0.05);
+}
+
+/* ----------------------------------
+   CONTACT SECTION
+---------------------------------- */
+.contact-info-item {
+    padding: 15px;
+    background: var(--glass);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--neon-primary);
+}
+
+.contact-info-item i {
+    color: var(--neon-primary);
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+/* Form */
+.contact-form input,
+.contact-form textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--neon-primary);
+    box-shadow: 0 0 8px var(--neon-primary);
+}
+
+/* ----------------------------------
+   FOOTER
+---------------------------------- */
+.footer {
+    background: #000;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer p {
+    color: #aaa;
+}
+
+.footer p strong {
+    color: var(--neon-primary);
+    text-shadow: 0 0 6px var(--neon-primary);
+}
