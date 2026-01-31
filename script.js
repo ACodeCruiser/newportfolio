@@ -135,24 +135,30 @@ $(document).ready(function(){
 ---------------------------------------- */
 const contactForm = document.querySelector(".contact-form form");
 
-contactForm.addEventListener("submit", function(e) {
+contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const name = document.querySelector('input[placeholder="Your Name"]').value;
-    const email = document.querySelector('input[placeholder="Your Email"]').value;
-    const phone = document.querySelector('input[placeholder="Phone Number"]').value;
-    const message = document.querySelector('textarea').value;
+    const name = document.getElementById("contactName").value.trim();
+    const email = document.getElementById("contactEmail").value.trim();
+    const phone = document.getElementById("contactPhone").value.trim();
+    const message = document.getElementById("contactMessage").value.trim();
 
-    const whatsappNumber = "919310487906"; // add your number without + and spaces
+    if (!name || !email || !phone || !message) {
+        alert("Please fill all fields");
+        return;
+    }
 
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=
-        *New Contact Message From Portfolio*%0A
-        *Name:* ${name}%0A
-        *Email:* ${email}%0A
-        *Phone:* ${phone}%0A
-        *Message:* ${message}
-    `.replace(/ /g, "%20");
+    const whatsappNumber = "919310487906";
+
+    const whatsappMessage =
+        `*New Contact Message From Portfolio*%0A%0A` +
+        `👤 *Name:* ${name}%0A` +
+        `📧 *Email:* ${email}%0A` +
+        `📞 *Phone:* ${phone}%0A%0A` +
+        `💬 *Message:*%0A${message}`;
+
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
     window.open(whatsappURL, "_blank");
+    contactForm.reset();
 });
-
